@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main() {
-  char estado_1, estado_2, carta_1[3], carta_2[3], cidade_1[10], cidade_2[10];
-  int populacao_1, populacao_2, pontos_turisticos_1, pontos_turisticos_2;
-  float area_1, area_2, PIB_1, PIB_2;
+  char estado_1, estado_2, carta_1[3], carta_2[3], cidade_1[16], cidade_2[16] = "";
+  int populacao_1, populacao_2, pontos_turisticos_1, pontos_turisticos_2 = 0;
+  float area_1, area_2, PIB_1, PIB_2 = 0.0;
 
   // PRIMEIRA CARTA
   printf("Preencha os dados da primeira carta:\n");
