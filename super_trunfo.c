@@ -6,6 +6,12 @@ int main() {
   float area_1, area_2, PIB_1, PIB_2;
 
   // PRIMEIRA CARTA
+
+  /*
+    Indica carta a ser cadastrada
+    Solicita: Estado (primeira letra), código da carta (letra do Estado + nº de 01 a 04), nome da cidade (1 palavra), número de habitantes (população, número inteiro), área da cidade (em km), produto interno bruto e número de pontos turísticos
+  */
+
   printf("Preencha os dados da primeira carta:\n");
 
   printf("Digite o Estado da primeira carta (apenas primeira letra):\n");
@@ -30,6 +36,11 @@ int main() {
   scanf("%i", &pontos_turisticos_1);
 
   //SEGUNDA CARTA
+
+  /*
+    Indica carta a ser cadastrada
+    Solicita: Estado (primeira letra), código da carta (letra do Estado + nº de 01 a 04), nome da cidade (1 palavra), número de habitantes (população, número inteiro), área da cidade (em km), produto interno bruto e número de pontos turísticos
+  */
   printf("Preencha os dados da segunda carta:\n");
 
   printf("Digite o Estado da segunda carta (apenas primeira letra):\n");
@@ -53,13 +64,17 @@ int main() {
   printf("Digite o número de pontos turísticos na cidade da segunda carta (número inteiro):\n");
   scanf("%i", &pontos_turisticos_2);
 
-  //IMPRIMIR CARTAS
+  //IMPRIMIR INFORMAÇÕES DAS CARTAS
 
   //CARTA 1
-  printf("Carta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2f\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %i\n\n", estado_1, carta_1, cidade_1, populacao_1, area_1, PIB_1, pontos_turisticos_1);
+
+  //Exibe nº da carta, Estado, código da carta, nome da cidade, população, área, PIB e número de pontos turísticos
+  printf("Carta 1\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2f\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %i\n\n", estado_1, carta_1, cidade_1, populacao_1, area_1, PIB_1, pontos_turisticos_1);
 
   //CARTA 2
-  printf("Carta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2f\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %i\n", estado_2, carta_2, cidade_2, populacao_2, area_2, PIB_2, pontos_turisticos_2);
+
+  //Exibe nº da carta, Estado, código da carta, nome da cidade, população, área, PIB e número de pontos turísticos
+  printf("Carta 2\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2f\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %i\n", estado_2, carta_2, cidade_2, populacao_2, area_2, PIB_2, pontos_turisticos_2);
 
   return 0;
 }
