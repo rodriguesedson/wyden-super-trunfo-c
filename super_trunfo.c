@@ -2,9 +2,10 @@
 #include <string.h>
 
 int main() {
-  char estado_1, estado_2, carta_1[4], carta_2[4], cidade_1[20], cidade_2[20];
-  int populacao_1, populacao_2, pontos_turisticos_1, pontos_turisticos_2;
-  float area_1, area_2, PIB_1, PIB_2, densidade_populacional_1, densidade_populacional_2, PIB_per_capita_1, PIB_per_capita_2;
+  char estado_1, estado_2, carta_1[4], carta_2[4], cidade_1[20], cidade_2[20], resultado;
+  int pontos_turisticos_1, pontos_turisticos_2;
+  unsigned long int populacao_1, populacao_2;
+  float area_1, area_2, PIB_1, PIB_2, densidade_populacional_1, densidade_populacional_2, PIB_per_capita_1, PIB_per_capita_2, super_poder_1, super_poder_2;
 
   // PRIMEIRA CARTA
 
@@ -42,6 +43,8 @@ int main() {
 
   PIB_per_capita_1 = PIB_1 / populacao_1;
 
+  super_poder_1 = (float) populacao_1 + area_1, + PIB_1 + (float) pontos_turisticos_1 + PIB_per_capita_1 - densidade_populacional_1;
+
   //SEGUNDA CARTA
 
   /*
@@ -77,19 +80,41 @@ int main() {
 
   PIB_per_capita_2 = (float) PIB_2 / populacao_2;
 
+  super_poder_2 = (float) populacao_2 + area_2, + PIB_2 + (float) pontos_turisticos_2 + PIB_per_capita_2 - densidade_populacional_2;
+
   printf("\n");
   //IMPRIMIR INFORMAÇÕES DAS CARTAS
 
   //CARTA 1
 
   //Exibe nº da carta, Estado, código da carta, nome da cidade, população, área, PIB e número de pontos turísticos
-  printf("\nCarta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2fkm²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n\n", estado_1, carta_1, cidade_1, populacao_1, area_1, PIB_1, pontos_turisticos_1, densidade_populacional_1, PIB_per_capita_1);
+  printf("\nCarta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %Li\nÁrea: %.2fkm²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\nSuper Poder: %.2f\n\n", estado_1, carta_1, cidade_1, populacao_1, area_1, PIB_1, pontos_turisticos_1, densidade_populacional_1, PIB_per_capita_1, super_poder_1);
 
   getchar();
   //CARTA 2
 
   //Exibe nº da carta, Estado, código da carta, nome da cidade, população, área, PIB e número de pontos turísticos
-  printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n", estado_2, carta_2, cidade_2, populacao_2, area_2, PIB_2, pontos_turisticos_2, densidade_populacional_2, PIB_per_capita_2);
+  printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %Li\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\nSuper Poder: %.2f\n", estado_2, carta_2, cidade_2, populacao_2, area_2, PIB_2, pontos_turisticos_2, densidade_populacional_2, PIB_per_capita_2, super_poder_2);
+
+  //COMPARAÇÕES
+  /*
+  Armazena o resultado da comparação e apresenta indicando se a primeira carta (resultado 1) ou a segunda carta (resultado 0) venceu
+  */
+  printf("\nComparação de Cartas:\n");
+  resultado = populacao_1 > populacao_2;
+  printf("População: Carta %d venceu\n", resultado);
+  resultado = area_1 > area_2;
+  printf("Área: Carta %d venceu\n", resultado);
+  resultado = PIB_1 > PIB_2;
+  printf("PIB: Carta %d venceu\n", resultado);
+  resultado = pontos_turisticos_1 > pontos_turisticos_2;
+  printf("Pontos Turísticos: Carta %d venceu\n", resultado);
+  resultado = densidade_populacional_1 < densidade_populacional_2;
+  printf("Densidade Populacional: Carta %d venceu\n", resultado);
+  resultado = PIB_per_capita_1 > PIB_per_capita_2;
+  printf("PIB per Capita: Carta %d venceu\n", resultado);
+  resultado = super_poder_1 > super_poder_2;
+  printf("Super Poder: Carta %d venceu\n", resultado);
 
   return 0;
 }
